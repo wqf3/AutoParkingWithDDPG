@@ -8,7 +8,7 @@
 
 #### 环境搭建
 
-以下`Bash`命令以命令行窗口所处目录下有本模块根目录`GymParking`文件夹为前提。
+以下`Bash`命令以使用Anaconda Prompt，且其所处目录下有本模块根目录`GymParking`文件夹为前提。
 
 ```bash
 conda create -n GymParkingTest python=3.7
