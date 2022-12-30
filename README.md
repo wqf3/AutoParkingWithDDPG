@@ -1,7 +1,5 @@
 # 基于DDPG实现自动泊车
 
-------------
-
 本模块基于`DDPG`算法实现智能车在不同场景下的自动泊车。DDPG算法使用`stable-baseline3`实现，提供的场景包括`highwai-env`自带的`parking-v0`和自定义的`modified_parking_env-v0`，使用`gym`进行场景模拟。
 
 ## 快速使用
