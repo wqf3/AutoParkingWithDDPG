@@ -216,4 +216,83 @@ w是可通过训练不断更新的网络参数。
 
 1. 把s_赋值给s，开始新的一步
 
+## 2.3环境配置
 
+### 2.3.1Gym
+
+&emsp;&emsp;Gym库是OpenAI推出的强化学习实验环境库，它用python语言实现了智能体/环境接口中的环境部分。Gym自带上百个“小游戏”，也即强化学习实验环境，包括以下几类：
+
+* 算法环境：包括一些字符串处理等传统计算机方法的实验环境。
+
+* 简单文本环境：包括几个用文本表示的简单游戏。
+
+* 经典控制环境：包括一些简单几何体运动，常用于经典强化学习算法的研究。
+
+* Atari游戏环境：包括数十个Atari 2600游戏，具有像素化的图形界面，希望玩家尽可能夺得高分。
+
+* MuJoCo环境：利用收费的MuJoCo运动引擎进行连续性的控制任务。
+
+* 机械控制环境：关于机械臂的抓取和控制等。
+
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://ai-studio-static-online.cdn.bcebos.com/afce0fe61e1e43ff873e0016d7f7c32d4f75dd33ed3c4fa9b002821cf26c92f6" width = "65%" alt=""/>
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+    图3 gym经典小游戏cartpole
+</center>
+
+
+### 2.3.2Parking
+
+&emsp;&emsp;Parking环境是[highway](https://highway-env.readthedocs.io/en/latest/installation.html)环境集下的环境之一。Parking环境是一种目标条件的连续控制任务，在强化学习任务中，车辆必须以适当的方向停在给定的空间中。highway_env所包含的环境包括：
+
+* 高速公路——“highway-v0”
+* 汇入——“merge-v0”
+* 环岛——“roundabout-v0”
+* 泊车——“parking-v0”
+* 十字路口——“intersection-v0”
+* 赛车道——“racetrack-v0”
+    
+&emsp;&emsp;本项目使用Parking进行自动泊车技术开发。
+
+    
+    
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://ai-studio-static-online.cdn.bcebos.com/3bd7779ac6ad4e77b100ca82abd572ed8a6312b4d3624574a147bc664c210506" width = "65%" alt=""/>
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+    图4 使用parking重建引航计划地图
+</center>
+
+### 2.3.3Pybullet
+&emsp;&emsp;PyBullet基于著名的开源物理引擎bullet开发，封装成了Python的一个模块，用于机器人仿真和学习。我们使用其进行自动泊车仿真试验。
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://ai-studio-static-online.cdn.bcebos.com/3525c06f57e648d18c7e9887382fa976ece9e7d81f2c4540b6da65b803dde76f" width = "65%" alt=""/>
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">
+    图5 使用Pybullet进行自动泊车仿真
+</center>
+
+## 我组完整项目链接
+
+[基于PaddleSeg与BiSeNet的自动驾驶道路分割模型](https://aistudio.baidu.com/aistudio/projectdetail/4360464) （百度官方认证精品项目）
+
+[基于PP-YOLOv2的智能车位姿识别模型](https://aistudio.baidu.com/aistudio/projectdetail/5110116)
+
+[基于PP-YOLOv2的交通标志检测与识别模型](https://aistudio.baidu.com/aistudio/projectdetail/4382014)
