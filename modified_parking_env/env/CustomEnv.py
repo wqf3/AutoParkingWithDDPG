@@ -84,9 +84,9 @@ class CustomEnv(AbstractEnv, GoalEnv):
             "action": {
                 "type": "ContinuousAction"
             },
-            "reward_weights": [1, 1, 0, 0, 0.02, 0.02],
+            "reward_weights": [1, 0.3, 0, 0, 0.02, 0.02],
             "success_goal_reward": 0.12,
-            "collision_reward": -50,
+            "collision_reward": -500,
             "steering_range": np.deg2rad(45),
             "simulation_frequency": 15,
             "policy_frequency": 5,
@@ -129,7 +129,7 @@ class CustomEnv(AbstractEnv, GoalEnv):
         net = RoadNetwork()
         lt = (LineType.CONTINUOUS, LineType.CONTINUOUS)
         net.add_lane("a", "b", StraightLane([34.5, 60], [34.5, 60-12.5], width=20, line_types=lt))
-        
+                
         self.road = Road(network=net,
                          np_random=self.np_random,
                          record_history=self.config["show_trajectories"])
@@ -152,14 +152,13 @@ class CustomEnv(AbstractEnv, GoalEnv):
         obstacle.LENGTH, obstacle.WIDTH = (12.5, 1)
         obstacle.diagonal = np.sqrt(obstacle.LENGTH**2 + obstacle.WIDTH**2)
         self.road.objects.append(obstacle)
-        
 
     def _create_vehicles(self) -> None:
         """Create some new random vehicles of a given type, and add them on the road."""
         self.controlled_vehicles = []
         for i in range(self.config["controlled_vehicles"]):
-            #vehicle = self.action_type.vehicle_class(self.road, [i*20, 0], 2*np.pi*self.np_random.rand(), 0)
             vehicle = self.action_type.vehicle_class(self.road, [i*20, 0], np.pi, 0)
+            #vehicle = self.action_type.vehicle_class(self.road, [i*20, 0], 2*np.pi*self.np_random.rand(), 0)
             self.road.vehicles.append(vehicle)
             self.controlled_vehicles.append(vehicle)
 

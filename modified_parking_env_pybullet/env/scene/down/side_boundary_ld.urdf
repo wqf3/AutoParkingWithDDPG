@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="side_boundaries">
+
+    <link name="side_wall">
+      <inertial>
+        <contact>
+          <lateral_friction value="1"/>
+        </contact>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Cube">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 1.1 0.5"/>
+        </geometry>
+        <material name="blue"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <box size="0.1 1.1 0.5"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <material name="blue">
+      <color rgba="0.68 0.74 0.04 1.0"/>
+    </material>
+
+  </robot>
